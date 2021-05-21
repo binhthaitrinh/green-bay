@@ -40,6 +40,39 @@ async function turnDestinationToPages({ graphql, actions }) {
   })
 }
 
+async function turnAccomodationsToPages({ graphql, actions }) {
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/accomodations/" } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: `/accomodations/${node.frontmatter.slug}`,
+      component: path.resolve("./src/templates/accomodation.js"),
+      context: {
+        slug: node.frontmatter.slug,
+        regex: `/${node.frontmatter.slug}/`,
+      },
+    })
+  })
+}
+
 exports.createPages = async ({ graphql, actions }) => {
-  await Promise.all([turnDestinationToPages({ graphql, actions })])
+  await Promise.all([
+    turnDestinationToPages({ graphql, actions }),
+    turnAccomodationsToPages({ graphql, actions }),
+  ])
 }
