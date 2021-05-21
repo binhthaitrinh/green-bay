@@ -23,7 +23,6 @@ export default function Header() {
     }
   `)
 
-  console.log(data)
   const { excerpt, title, cover } = data.markdownRemark.frontmatter
   return (
     <Grid gridTemplateColumns="repeat(3, 1fr)" gridTemplateRows="60vh">

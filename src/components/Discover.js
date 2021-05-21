@@ -32,7 +32,6 @@ export default function Discover() {
       }
     }
   `)
-  console.log(data)
   return (
     <Section>
       <SectionHeader>Discover</SectionHeader>

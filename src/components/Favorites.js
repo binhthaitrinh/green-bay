@@ -35,7 +35,6 @@ export default function Favorites() {
       }
     }
   `)
-  console.log(data)
   return (
     <Section>
       <SectionHeader>Guests' Favorite Rooms</SectionHeader>
@@ -44,7 +43,6 @@ export default function Favorites() {
           const {
             node: { frontmatter, excerpt },
           } = edge
-          console.log(frontmatter)
           return (
             <Stack
               key={frontmatter.slug}

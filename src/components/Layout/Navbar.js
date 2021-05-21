@@ -36,7 +36,7 @@ export default function Navbar() {
     <Box as="nav" bg="white">
       <Container>
         <HStack justifyContent="space-between">
-          <Link href="/">
+          <Link to="/">
             <StaticImage
               src="../../images/logo.png"
               alt="Greenbay"

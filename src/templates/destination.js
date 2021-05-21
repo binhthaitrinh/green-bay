@@ -11,7 +11,9 @@ import { IoMdQuote } from "react-icons/io"
 import Seo from "../components/seo"
 
 export default function Discover({ data }) {
+  console.log(data)
   const image = getImage(data.markdownRemark.frontmatter.cover)
+  console.log(image)
   const bgImage = convertToBgImage(image)
   return (
     <Layout>
