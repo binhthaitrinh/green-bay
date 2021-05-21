@@ -1,6 +1,7 @@
 ---
 role: destination-detail
 title: Getting to Phu Quoc
+slug: getting-to-phu-quoc
 cover: ./images/cover.jpg
 description: With azure waters, white sand beaches, lush green jungle and majestic mountains, life is a tropical paradise on Phu Quoc island. \nWhen you visit Phu Quoc we want you to have have memories you’ll never forget, so we’d like to impart our knowledge on the fantastic facts regarding the island’s rich history, varied topography and welcoming climate, to give you the big picture on this incredible haven. \nSituated in the Gulf of Thailand, Phu Quoc is a small archipelago experiencing a big rise in popularity, as people discover all of what the island has to offer. No longer just a sleepy hideaway–although there are plenty of places to unwind–it has recently sprung to life, with a whole host of activities and adventures vying for your attention, firmly cementing it as the ultimate Vietnam luxury holiday destination.
 ---
