@@ -13,7 +13,10 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
 export default function Footer() {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/contact/" } }) {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/contact/" } }
+        sort: { fields: id }
+      ) {
         edges {
           node {
             frontmatter {

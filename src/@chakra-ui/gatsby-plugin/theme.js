@@ -6,6 +6,27 @@ const theme = {
       body: {
         color: "#4A5568",
       },
+      article: {
+        h2: {
+          color: "#367639",
+          fontSize: "32px",
+          fontFamily: "Canela, serif",
+          fontWeight: "medium",
+          _notFirst: {
+            marginTop: "48px",
+          },
+          _before: {
+            display: "block",
+            content: '""',
+            width: "50px",
+            height: "4px",
+            backgroundColor: "#367639",
+          },
+        },
+        p: {
+          marginBottom: "16px",
+        },
+      },
     },
   },
   fonts: {
