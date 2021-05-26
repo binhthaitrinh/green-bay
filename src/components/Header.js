@@ -39,7 +39,7 @@ export default function Header() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   const data = useStaticQuery(graphql`
     query {
-      markdownRemark(fileAbsolutePath: { regex: "/content/" }) {
+      markdownRemark(fileAbsolutePath: { regex: "/landing/" }) {
         frontmatter {
           title
           description
@@ -54,6 +54,7 @@ export default function Header() {
   `)
   const image = getImage(data.markdownRemark.frontmatter.cover)
   const bgImage = convertToBgImage(image)
+  console.log(bgImage)
   const { title, description } = data.markdownRemark.frontmatter
   return (
     <BackgroundImage

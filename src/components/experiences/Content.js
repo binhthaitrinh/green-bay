@@ -68,7 +68,7 @@ export default function Content() {
                 transform="translateY(-100px)"
               >
                 <Box
-                  gridColumn={index % 2 === 0 ? "1/10" : "3/-1"}
+                  gridColumn={index % 2 === 0 ? "1/10" : "4/-1"}
                   backgroundColor="white"
                   p="40px 60px"
                   border="1px solid var(--chakra-colors-gray-200)"
