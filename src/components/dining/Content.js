@@ -66,7 +66,7 @@ export default function Content() {
         </Heading>
         <Text>{description}</Text>
       </VStack>
-      <VStack mt="56px" width="100%">
+      <VStack mt="56px" width="100%" spacing={24}>
         {data.allMarkdownRemark.edges.map(edge => {
           const image = getImage(edge.node.frontmatter.cover)
           const bgImage = convertToBgImage(image)
