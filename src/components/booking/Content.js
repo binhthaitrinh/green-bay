@@ -53,9 +53,10 @@ export default function Content() {
         Book now
       </Heading>
       <Stack
-        direction="row"
+        direction={["column", "row"]}
+        spacing={[8, undefined]}
         border="1px solid var(--chakra-colors-gray-300)"
-        px={8}
+        px={[4, 8]}
         py={8}
         flexWrap="wrap"
         divider={<StackDivider borderColor="gray.300" />}
@@ -112,7 +113,7 @@ export default function Content() {
             />
           </HStack>
         </VStack>
-        <Box pl={12} flexBasis="55%">
+        <Box pl={[4, 12]} flexBasis="55%">
           <form style={{ width: "100%" }}>
             <VStack spacing={4} alignItems="flex-start">
               <FormControl id="checkIn">

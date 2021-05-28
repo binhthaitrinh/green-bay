@@ -58,7 +58,7 @@ export default function Header() {
           as="h1"
           color="white"
           fontWeight="medium"
-          fontSize="56px"
+          fontSize={["24px", "56px"]}
           textTransform="uppercase"
         >
           Experiences

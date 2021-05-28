@@ -34,67 +34,69 @@ export default function Content() {
     }
   `)
   return (
-    <Section>
-      <Container>
-        <VStack spacing="60px">
-          {data.allMarkdownRemark.edges.map((edge, index) => {
-            const {
-              node: { frontmatter },
-            } = edge
-            return (
-              <Stack
-                key={frontmatter.slug}
-                key={index}
-                flexDirection="row"
-                flexWrap="wrap"
-                width="100%"
+    <Section py={["40px", "96px"]}>
+      <VStack spacing="60px">
+        {data.allMarkdownRemark.edges.map((edge, index) => {
+          const {
+            node: { frontmatter },
+          } = edge
+          return (
+            <Stack
+              key={frontmatter.slug}
+              key={index}
+              flexDirection={["column", "column", "column", "row"]}
+              flexWrap="wrap"
+              spacing={0}
+              width="100%"
+            >
+              <Box
+                flexBasis="40%"
+                height={["400px", "400px", "400px", "600px"]}
               >
-                <Box flexBasis="40%">
-                  <Link to={`/destination/${frontmatter.slug}`}>
-                    <GatsbyImage
-                      image={getImage(frontmatter.cover)}
-                      alt={frontmatter.name}
-                      style={{ width: "100%", height: "500px" }}
-                    />
-                  </Link>
-                </Box>
+                <Link to={`/destination/${frontmatter.slug}`}>
+                  <GatsbyImage
+                    image={getImage(frontmatter.cover)}
+                    alt={frontmatter.name}
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                </Link>
+              </Box>
+              <VStack
+                flexBasis="60%"
+                order={[1, 1, 1, index % 2 === 1 ? -1 : 1]}
+                justifyContent="center"
+                alignItems="flex-start"
+              >
                 <VStack
-                  flexBasis="60%"
-                  order={index % 2 === 1 ? -1 : 1}
-                  justifyContent="center"
+                  padding={["30px 15px", "30px 15px", "80px 60px"]}
+                  border="1px solid var(--chakra-colors-gray-200)"
+                  width="100%"
                   alignItems="flex-start"
                 >
-                  <VStack
-                    padding="80px 60px"
-                    border="1px solid var(--chakra-colors-gray-200)"
-                    width="100%"
-                    alignItems="flex-start"
-                  >
-                    <Link to={`/destination/${frontmatter.slug}`}>
-                      <Heading
-                        as="h4"
-                        fontWeight="medium"
-                        color="brandColor"
-                        fontSize="32px"
-                      >
-                        {frontmatter.title}
-                      </Heading>
-                    </Link>
-
-                    <Text>{frontmatter.description.split("\\n")[0]}</Text>
-                    <OutlineGatsbyLink
-                      to={`/destination/${frontmatter.slug}`}
-                      rightIcon={<HiOutlineArrowNarrowRight />}
+                  <Link to={`/destination/${frontmatter.slug}`}>
+                    <Heading
+                      as="h4"
+                      fontWeight="medium"
+                      color="brandColor"
+                      fontSize="32px"
                     >
-                      Read more
-                    </OutlineGatsbyLink>
-                  </VStack>
+                      {frontmatter.title}
+                    </Heading>
+                  </Link>
+
+                  <Text>{frontmatter.description.split("\\n")[0]}</Text>
+                  <OutlineGatsbyLink
+                    to={`/destination/${frontmatter.slug}`}
+                    rightIcon={<HiOutlineArrowNarrowRight />}
+                  >
+                    Read more
+                  </OutlineGatsbyLink>
                 </VStack>
-              </Stack>
-            )
-          })}
-        </VStack>
-      </Container>
+              </VStack>
+            </Stack>
+          )
+        })}
+      </VStack>
     </Section>
   )
 }

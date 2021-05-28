@@ -55,28 +55,32 @@ export default function Content() {
           return (
             <Stack
               key={frontmatter.slug}
-              flexDirection="row"
+              flexDirection={["column", "column", "column", "row"]}
+              spacing={0}
               flexWrap="wrap"
               width="100%"
               mt={8}
             >
-              <Box flexBasis="40%">
+              <Box
+                flexBasis="40%"
+                height={["300px", "300px", "300px", "600px"]}
+              >
                 <Link to={`/accomodations/${frontmatter.slug}`}>
                   <GatsbyImage
                     image={getImage(frontmatter.cover)}
                     alt={frontmatter.title}
-                    style={{ width: "100%", height: "600px" }}
+                    style={{ width: "100%", height: "100%" }}
                   />
                 </Link>
               </Box>
               <VStack
                 flexBasis="60%"
-                order={index % 2 === 1 ? -1 : 1}
+                order={[1, 1, 1, index % 2 === 1 ? -1 : 1]}
                 justifyContent="center"
                 alignItems="flex-start"
               >
                 <VStack
-                  padding="80px 60px"
+                  padding={["30px 15px", "30px 15px", "80px 60px"]}
                   border="1px solid var(--chakra-colors-gray-200)"
                   width="100%"
                   alignItems="flex-start"
@@ -123,7 +127,7 @@ function SectionTitle({ title, ...props }) {
       color="gray.500"
       textTransform="uppercase"
       my={6}
-      fontSize="32px"
+      fontSize={["24px", "32px"]}
       {...props}
     >
       {title}

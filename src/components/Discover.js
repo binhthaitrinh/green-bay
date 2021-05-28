@@ -36,9 +36,15 @@ export default function Discover() {
     <Section>
       <SectionHeader>Discover</SectionHeader>
       <Grid
-        gridTemplateColumns="repeat(auto-fill, minmax(280px, 1fr))"
+        gridTemplateColumns={[
+          "1fr",
+          "1fr",
+          "repeat(2, 1fr)",
+          "repeat(2, 1fr)",
+          "repeat(3, 1fr)",
+        ]}
         gridAutoRows="400px auto auto"
-        gap="40px"
+        gap={["20px", "20px", "20px", "40px"]}
       >
         {data.allMarkdownRemark.edges.map(edge => {
           const {

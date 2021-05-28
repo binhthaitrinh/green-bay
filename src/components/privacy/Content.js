@@ -30,7 +30,7 @@ export default function Content() {
     html,
   } = data.markdownRemark
   return (
-    <Section lineHeight="1.6">
+    <Section lineHeight="1.6" py={["32px", "96px"]}>
       <Heading
         mb={8}
         fontWeight="medium"
@@ -63,7 +63,7 @@ export default function Content() {
                 <AccordionIcon />
               </AccordionButton>
             </Text>
-            <AccordionPanel py={8} px={16}>
+            <AccordionPanel py={8} px={[4, 16]}>
               {earlyCheckOut.split("\\n").map(part => (
                 <Text key={part}>{part}</Text>
               ))}
@@ -89,7 +89,7 @@ export default function Content() {
                 <AccordionIcon />
               </AccordionButton>
             </Text>
-            <AccordionPanel py={8} px={16}>
+            <AccordionPanel py={8} px={[4, 16]}>
               {earlyCheckIn.split("\\n").map(part => (
                 <Text key={part}>{part}</Text>
               ))}
@@ -115,7 +115,7 @@ export default function Content() {
                 <AccordionIcon />
               </AccordionButton>
             </Text>
-            <AccordionPanel py={8} px={16}>
+            <AccordionPanel py={8} px={[4, 16]}>
               {whatInfo.split("\\n").map(part => (
                 <Text key={part}>{part}</Text>
               ))}
@@ -141,7 +141,7 @@ export default function Content() {
                 <AccordionIcon />
               </AccordionButton>
             </Text>
-            <AccordionPanel py={8} px={16}>
+            <AccordionPanel py={8} px={[4, 16]}>
               {marketing.split("\\n").map(part => (
                 <Text key={part}>{part}</Text>
               ))}

@@ -51,26 +51,27 @@ export default function Content() {
           fontSize="32px"
           fontWeight="medium"
           textTransform="uppercase"
+          textAlign="center"
         >
           {title}
         </Heading>
-        <Text>{description}</Text>
+        <Text textAlign="center">{description}</Text>
       </VStack>
       <VStack mt="56px">
         {data.allMarkdownRemark.edges.map((edge, index) => {
           return (
-            <VStack>
-              <Box width="80%" m="auto">
+            <VStack spacing={0}>
+              <Box width={["100%", "80%"]} m="auto">
                 <GatsbyImage image={getImage(edge.node.frontmatter.cover)} />
               </Box>
               <Grid
                 gridTemplateColumns="repeat(12, 1fr)"
-                transform="translateY(-100px)"
+                transform={[undefined, "translateY(-100px)"]}
               >
                 <Box
-                  gridColumn={index % 2 === 0 ? "1/10" : "4/-1"}
+                  gridColumn={["1/-1", index % 2 === 0 ? "1/10" : "4/-1"]}
                   backgroundColor="white"
-                  p="40px 60px"
+                  p={["30px 15px", "40px 60px"]}
                   border="1px solid var(--chakra-colors-gray-200)"
                 >
                   <Heading

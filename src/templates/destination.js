@@ -9,6 +9,7 @@ import Layout from "../components/layout"
 import Navbar from "../components/Layout/Navbar"
 import { IoMdQuote } from "react-icons/io"
 import Seo from "../components/seo"
+import { Container } from "../components/Layout"
 
 export default function Discover({ data }) {
   console.log(data)
@@ -28,7 +29,14 @@ export default function Discover({ data }) {
           preserveStackingContext
           height="70vh"
         >
-          <Heading as="h1" color="white" fontWeight="normal" fontSize="56px">
+          <Heading
+            as="h1"
+            color="white"
+            fontWeight="normal"
+            fontSize="56px"
+            textAlign="center"
+            lineHeight="1.2"
+          >
             {data.markdownRemark.frontmatter.title}
           </Heading>
         </VStack>
@@ -39,7 +47,7 @@ export default function Discover({ data }) {
         maxW="1140px"
         m="auto"
         border="1px solid var(--chakra-colors-gray-200)"
-        p="60px 80px"
+        p={["40px 15px", "60px 80px"]}
       >
         <VStack
           alignItems="center"
@@ -62,14 +70,14 @@ export default function Discover({ data }) {
         paddingBottom={14}
         borderBottom="1px solid var(--chakra-colors-gray-200)"
       >
-        <Box maxW="768px" m="auto">
+        <Container>
           <Box
             as="article"
             dangerouslySetInnerHTML={{
               __html: data.markdownRemark.html,
             }}
           ></Box>
-        </Box>
+        </Container>
       </Box>
     </Layout>
   )

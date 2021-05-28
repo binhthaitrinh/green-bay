@@ -68,7 +68,7 @@ export default function Content() {
                 <AccordionIcon />
               </AccordionButton>
             </Text>
-            <AccordionPanel py={8} px={16}>
+            <AccordionPanel py={8} px={[4, 16]}>
               {earlyCheckOut}
             </AccordionPanel>
           </AccordionItem>
@@ -92,7 +92,7 @@ export default function Content() {
                 <AccordionIcon />
               </AccordionButton>
             </Text>
-            <AccordionPanel py={8} px={16}>
+            <AccordionPanel py={8} px={[4, 16]}>
               {earlyCheckIn}
             </AccordionPanel>
           </AccordionItem>
@@ -116,7 +116,7 @@ export default function Content() {
                 <AccordionIcon />
               </AccordionButton>
             </Text>
-            <AccordionPanel py={8} px={16}>
+            <AccordionPanel py={8} px={[4, 16]}>
               {disclaimers}
             </AccordionPanel>
           </AccordionItem>

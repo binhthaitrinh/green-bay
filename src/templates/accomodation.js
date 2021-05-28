@@ -57,7 +57,7 @@ export default function Bungalow({ data }) {
       <header>
         <Navbar />
       </header>
-      <Box>
+      <Box py={["32px", "96px"]}>
         <Container>
           <Center>
             <VStack spacing={4} maxW="768px" m="auto">
@@ -66,6 +66,8 @@ export default function Bungalow({ data }) {
                 fontSize="48px"
                 color="brandColor"
                 fontWeight="medium"
+                textAlign="center"
+                lineHeight="1.2"
               >
                 {title}
               </Heading>
@@ -102,7 +104,12 @@ export default function Bungalow({ data }) {
               {data.allImageSharp.edges.map((edge, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <Box width="90%" m="auto" mb={10} h="500px">
+                    <Box
+                      width={["100%", "90%"]}
+                      m="auto"
+                      mb={10}
+                      h={["200px", "500px"]}
+                    >
                       <GatsbyImage
                         image={edge.node.gatsbyImageData}
                         alt="beachfront"
@@ -122,10 +129,10 @@ export default function Bungalow({ data }) {
               })}
             </Swiper>
           </Box>
-          <Section>
+          <Section py={["32px", "96px"]}>
             <SectionHeader>Facilities</SectionHeader>
             <Stack
-              direction="row"
+              direction={["column", "row"]}
               width="100%"
               alignItems="flex-start"
               justifyContent="center"
@@ -133,8 +140,9 @@ export default function Bungalow({ data }) {
             >
               <VStack
                 border="1px solid var(--chakra-colors-gray-200)"
-                padding="30px 80px"
+                padding={["30px 30px", "30px 80px"]}
                 spacing={4}
+                width="100%"
                 divider={<Divider variant="dashed" />}
               >
                 {features.slice(0, Math.ceil(features.length / 2)).map(fea => (
@@ -145,7 +153,8 @@ export default function Bungalow({ data }) {
               </VStack>
               <VStack
                 border="1px solid var(--chakra-colors-gray-200)"
-                padding="30px 80px"
+                padding={["30px 30px", "30px 80px"]}
+                width="100%"
                 spacing={4}
                 divider={<Divider variant="dashed" />}
               >
@@ -157,10 +166,13 @@ export default function Bungalow({ data }) {
               </VStack>
             </Stack>
           </Section>
-          <Section>
+          <Section py={["32px", "96px"]}>
             <SectionHeader>Book now</SectionHeader>
             <Grid
-              gridTemplateColumns="repeat(auto-fill, minmax(350px, 1fr))"
+              gridTemplateColumns={[
+                "1fr",
+                "repeat(auto-fill, minmax(350px, 1fr))",
+              ]}
               gridGap={4}
             >
               <FormControl id="checkin">
@@ -201,7 +213,7 @@ export default function Bungalow({ data }) {
               </OutlineLink>
             </Center>
           </Section>
-          <Section>
+          <Section py={["32px", "96px"]}>
             <SectionHeader>Other stay</SectionHeader>
 
             <VStack spacing="60px">
@@ -212,27 +224,28 @@ export default function Bungalow({ data }) {
                 return (
                   <Stack
                     key={frontmatter.slug}
-                    flexDirection="row"
+                    flexDirection={["column", "row"]}
+                    spacing={0}
                     flexWrap="wrap"
                     width="100%"
                   >
-                    <Box flexBasis="40%">
+                    <Box flexBasis="40%" height={["300px", "600px"]}>
                       <Link to={`/accomodations/${frontmatter.slug}`}>
                         <GatsbyImage
                           image={getImage(frontmatter.cover)}
                           alt={frontmatter.title}
-                          style={{ width: "100%", height: "600px" }}
+                          style={{ width: "100%", height: "100%" }}
                         />
                       </Link>
                     </Box>
                     <VStack
                       flexBasis="60%"
-                      order={index % 2 === 1 ? -1 : 1}
+                      order={[1, 1, 1, index % 2 === 1 ? -1 : 1]}
                       justifyContent="center"
                       alignItems="flex-start"
                     >
                       <VStack
-                        padding="80px 60px"
+                        padding={["30px 15px", "80px 60px"]}
                         border="1px solid var(--chakra-colors-gray-200)"
                         width="100%"
                         alignItems="flex-start"

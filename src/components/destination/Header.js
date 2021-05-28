@@ -25,8 +25,11 @@ export default function Header() {
 
   const { excerpt, title, cover } = data.markdownRemark.frontmatter
   return (
-    <Grid gridTemplateColumns="repeat(3, 1fr)" gridTemplateRows="60vh">
-      <Box gridColumn="1 / 3">
+    <Grid
+      gridTemplateColumns={["1fr", "repeat(3, 1fr)"]}
+      gridTemplateRows={["auto", "auto", "auto", "60vh"]}
+    >
+      <Box gridColumn="1 / 3" display={["none", "none", "none", "block"]}>
         <GatsbyImage
           image={getImage(cover)}
           alt="Destination cover"
@@ -38,8 +41,13 @@ export default function Header() {
       <VStack
         justifyContent="center"
         alignItems="flex-start"
-        gridColumn="3/-1"
-        p="0px 180px 0px 60px"
+        gridColumn={["1/-1", "1/-1", "1/-1", "3/-1"]}
+        p={[
+          "30px 15px 30px 15px",
+          "30px 15px 30px 15px",
+          "30px 15px 30px 15px",
+          "0px 180px 0px 60px",
+        ]}
       >
         <Heading as="h1" color="brandColor" fontWeight="medium" fontSize="48px">
           {title}

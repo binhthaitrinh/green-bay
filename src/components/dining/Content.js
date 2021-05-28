@@ -88,33 +88,38 @@ export default function Content() {
                   alignItems="flex-start"
                   justifyContent="center"
                   height="100%"
-                  pl={10}
+                  pl={[4, 10]}
+                  pr={[4, 0]}
                 >
                   {edge.node.frontmatter.title.split(" ").map(word => (
                     <Heading
                       as="h2"
                       fontWeight="medium"
-                      fontSize="48px"
+                      fontSize={["40px", "48px"]}
                       key={word}
                       lineHeight={0.8}
                     >
                       {word}
                     </Heading>
                   ))}
-                  <Text fontSize="24px" border="1px solid white" px={4}>
+                  <Text
+                    fontSize={["18px", "24px"]}
+                    border="1px solid white"
+                    px={4}
+                  >
                     "{edge.node.frontmatter.subTitle}"
                   </Text>
                 </VStack>
               </BackgroundImage>
               <Box
-                width="90%"
+                width={["100%", "90%"]}
                 border="1px solid var(--chakra-colors-gray-300)"
                 mx="auto"
-                px={24}
+                px={["15px", 24]}
                 py={12}
               >
                 <Grid
-                  gridTemplateColumns="repeat(auto-fill, minmax(300px, 1fr))"
+                  gridTemplateColumns="repeat(auto-fill, minmax(250px, 1fr))"
                   gridGap={8}
                 >
                   <GridItem
