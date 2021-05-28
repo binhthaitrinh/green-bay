@@ -45,7 +45,10 @@ async function turnAccomodationsToPages({ graphql, actions }) {
   const result = await graphql(`
     query {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/accomodations/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/accomodations/" }
+          frontmatter: { role: { ne: "overview" } }
+        }
       ) {
         edges {
           node {
