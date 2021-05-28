@@ -26,6 +26,7 @@ export default function ContactHeader() {
               justifyContent="flex-start"
               alignItems="center"
               spacing="8px"
+              display={["none", "flex"]}
             >
               <IconWithLink
                 IconComp={FaInstagram}
@@ -41,17 +42,31 @@ export default function ContactHeader() {
               />
             </HStack>
           </HStack>
-          <HStack justifyContent="flex-end" spacing="24px" alignItems="center">
-            <ExternalLink href="tel:+842976267799">
+          <HStack
+            justifyContent="flex-end"
+            spacing={["12px", "12px", "12px", "12px", "24px"]}
+            alignItems="center"
+          >
+            <ExternalLink
+              href="tel:+842976267799"
+              display={["none", "inline-block"]}
+            >
               <HStack justifyContent="flex-end" alignItems="center">
                 <Icon as={AiTwotonePhone} w={6} h={6} />
-                <Text>(+84 297) 626 7799</Text>
+                <Text display={["none", "none", "none", "none", "block"]}>
+                  (+84 297) 626 7799
+                </Text>
               </HStack>
             </ExternalLink>
-            <ExternalLink href="mailto:info@greenbayphuquocresort.com">
+            <ExternalLink
+              href="mailto:info@greenbayphuquocresort.com"
+              display={["none", "inline-block"]}
+            >
               <HStack justifyContent="flex-end" alignItems="center">
                 <Icon as={IoMdMail} w={6} h={6} />
-                <Text>info@greenbayphuquocresort.com</Text>
+                <Text display={["none", "none", "none", "none", "block"]}>
+                  info@greenbayphuquocresort.com
+                </Text>
               </HStack>
             </ExternalLink>
             <HStack justifyContent="flex-end" alignItems="center">

@@ -89,13 +89,25 @@ export default function Footer() {
                 </HStack>
               </VStack>
               <HStack spacing={8} textDecor="underline" my={8}>
-                <ChakraLink as={Link} to="/" _hover={{ color: "brandColor" }}>
+                <ChakraLink
+                  as={Link}
+                  to="/policy-notice"
+                  _hover={{ color: "brandColor" }}
+                >
                   Privacy Policy
                 </ChakraLink>
-                <ChakraLink as={Link} to="/" _hover={{ color: "brandColor" }}>
+                <ChakraLink
+                  as={Link}
+                  to="/terms"
+                  _hover={{ color: "brandColor" }}
+                >
                   Terms and Conditions
                 </ChakraLink>
-                <ChakraLink as={Link} to="/" _hover={{ color: "brandColor" }}>
+                <ChakraLink
+                  as={Link}
+                  to="/safe-travel-program"
+                  _hover={{ color: "brandColor" }}
+                >
                   Safe Travel Program
                 </ChakraLink>
               </HStack>

@@ -58,6 +58,7 @@ export default function Content() {
               flexDirection="row"
               flexWrap="wrap"
               width="100%"
+              mt={8}
             >
               <Box flexBasis="40%">
                 <Link to={`/accomodations/${frontmatter.slug}`}>

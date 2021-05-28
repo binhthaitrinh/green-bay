@@ -70,22 +70,32 @@ export default function Offers() {
         >
           <SwiperSlide>
             <Grid
-              gridTemplateColumns="repeat(2, 1fr)"
-              gridTemplateRows="1fr"
-              w="90%"
+              gridTemplateColumns="repeat(auto-fill, minmax(400px, 1fr))"
+              // gridTemplateRows="1fr"
+              w={["", "", "90%"]}
               margin="auto"
               border="1px solid var(--chakra-colors-gray-200)"
               mb="60px"
               minH="740px"
             >
-              <Box>
+              <Box
+                clipPath={[
+                  "",
+                  "",
+                  "",
+                  "polygon(0 0, 100% 0, 90% 100%, 0 100%)",
+                ]}
+              >
                 <StaticImage
                   quality="100%"
                   src="../images/offer1.jpg"
+                  layout="fullWidth"
                   alt="offer 1"
                   style={{
                     height: "100%",
-                    clipPath: "polygon(0 0, 100% 0, 90% 100%, 0 100%",
+                    // "@media(min-width: 62em)": {
+                    //   clipPath: "polygon(0 0, 100% 0, 90% 100%, 0 100%)",
+                    // },
                   }}
                 />
               </Box>
@@ -111,25 +121,35 @@ export default function Offers() {
           </SwiperSlide>
           <SwiperSlide>
             <Grid
-              gridTemplateColumns="repeat(2, 1fr)"
-              gridTemplateRows="1fr"
-              w="90%"
+              gridTemplateColumns="repeat(auto-fill, minmax(400px, 1fr))"
+              w={["", "", "90%"]}
               margin="auto"
               border="1px solid var(--chakra-colors-gray-200)"
               minH="740px"
             >
-              <Box>
+              <Box
+                clipPath={[
+                  "",
+                  "",
+                  "",
+                  "polygon(0 0, 100% 0, 90% 100%, 0 100%)",
+                ]}
+              >
                 <StaticImage
                   src="../images/offer2.jpg"
+                  layout="fullWidth"
                   alt="offer 2"
                   quality="100%"
                   style={{
                     height: "100%",
-                    clipPath: "polygon(0 0, 100% 0, 90% 100%, 0 100%",
+                    // clipPath: "polygon(0 0, 100% 0, 90% 100%, 0 100%",
+                    //   "@media(min-width: 62em)": {
+                    //     clipPath: "polygon(0 0, 100% 0, 90% 100%, 0 100%)",
+                    //   },
                   }}
                 />
               </Box>
-              <VStack alignItems="flex-start" justify="center" px="60px">
+              <VStack alignItems="flex-start" justify="center" p="40px 60px">
                 <Heading as="h3" color="brandColor" fontSize="40px">
                   Special Promotion
                 </Heading>

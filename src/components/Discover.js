@@ -80,7 +80,7 @@ export default function Discover() {
                     fontWeight="light"
                     mt="16px"
                   >
-                    Read more
+                    Check this out!
                   </Button>
                 </Link>
               </Box>

@@ -13,7 +13,7 @@ export default function AboutUs() {
       >
         <Box p="100px 15px">
           <VStack alignItems="flex-start" color="gray.500">
-            <Heading as="h3" color="gray.400" fontSize="24px">
+            <Heading as="h3" color="gray.500" fontSize="24px">
               About us
             </Heading>
             <SectionHeader>Our story</SectionHeader>

@@ -16,6 +16,7 @@ import {
   Editable,
   EditablePreview,
   EditableInput,
+  Stack,
 } from "@chakra-ui/react"
 import { Container } from "./Layout"
 import { OutlineLink, PrimaryLink } from "./Buttons"
@@ -62,17 +63,19 @@ export default function Header() {
       preserveStackingContext
       style={{
         backgroundPosition: "center 20%",
-        height: "90vh",
+        height: "100vh",
         width: "100%",
       }}
     >
       <Box color="white" zIndex="3" position="relative" height="100%">
         <Navbar />
         <Container height="100%">
-          <HStack
+          <Stack
+            direction="row"
             justifyContent="space-between"
             alignItems="center"
             height="100%"
+            transform="translateY(-50px)"
           >
             <VStack
               w="600px"
@@ -80,20 +83,22 @@ export default function Header() {
               alignItems="flex-start"
               spacing="16px"
             >
-              <Heading fontWeight="medium" fontSize="64px">
+              <Heading
+                fontWeight="medium"
+                fontSize={["40px", "64px"]}
+                lineHeight={[1, 1.33]}
+              >
                 {title}
               </Heading>
               <Divider />
               <Text fontWeight="thin">{description}</Text>
-              <OutlineLink href="/" rightIcon={<CgArrowLongRight />}>
-                Read more
-              </OutlineLink>
             </VStack>
             <VStack
               w="250px"
               alignItems="stretch"
               justifyContent="center"
               spacing={0}
+              display={["none", "flex"]}
             >
               <Box
                 bg="white"
@@ -144,7 +149,7 @@ export default function Header() {
                   <Text color="brandColor">Number of guests</Text>
                   <Editable
                     defaultValue={formData.noGuests}
-                    fontSize="24px"
+                    fontSize="36px"
                     onChange={nextValue =>
                       setFormData({ ...formData, noGuests: nextValue })
                     }
@@ -158,7 +163,7 @@ export default function Header() {
                 Search
               </PrimaryLink>
             </VStack>
-          </HStack>
+          </Stack>
         </Container>
       </Box>
       <Box

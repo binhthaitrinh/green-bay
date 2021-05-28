@@ -1,11 +1,18 @@
 import Icon from "@chakra-ui/icon"
+import { Box } from "@chakra-ui/layout"
 import React from "react"
 
 export default function ExternalLink({ href, children, ...props }) {
   return (
-    <a rel="noopener noreferrer" target="_blank" href={href} {...props}>
+    <Box
+      as="a"
+      rel="noopener noreferrer"
+      target="_blank"
+      href={href}
+      {...props}
+    >
       {children}
-    </a>
+    </Box>
   )
 }
 

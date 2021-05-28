@@ -1,6 +1,6 @@
 import { Box, Heading, HStack, Stack, Text, VStack } from "@chakra-ui/layout"
 import { FramerTreeLayoutContext } from "framer-motion"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 import Section from "./Section"
@@ -14,22 +14,25 @@ export default function Favorites() {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/favorites/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/accomodations/" }
+          frontmatter: { role: { ne: "overview" } }
+        }
       ) {
         edges {
           node {
             frontmatter {
               slug
-              name
-              guests
+              title
+              numOfPeople
               feature
+              description
               cover {
                 childImageSharp {
-                  gatsbyImageData(quality: 60, placeholder: BLURRED)
+                  gatsbyImageData(quality: 100, placeholder: BLURRED)
                 }
               }
             }
-            excerpt(pruneLength: 250)
           }
         }
       }
@@ -41,7 +44,7 @@ export default function Favorites() {
       <VStack spacing="60px">
         {data.allMarkdownRemark.edges.map((edge, index) => {
           const {
-            node: { frontmatter, excerpt },
+            node: { frontmatter },
           } = edge
           return (
             <Stack
@@ -51,12 +54,14 @@ export default function Favorites() {
               width="100%"
             >
               <Box flexBasis="40%">
-                <GatsbyImage
-                  image={getImage(frontmatter.cover)}
-                  alt={frontmatter.name}
-                  style={{ width: "100%", height: "600px" }}
-                  // aspectRatio={16 / 12}
-                />
+                <Link to={`/${frontmatter.slug}`}>
+                  <GatsbyImage
+                    image={getImage(frontmatter.cover)}
+                    alt={frontmatter.title}
+                    style={{ width: "100%", height: "600px" }}
+                    // aspectRatio={16 / 12}
+                  />
+                </Link>
               </Box>
               <VStack
                 flexBasis="60%"
@@ -70,25 +75,27 @@ export default function Favorites() {
                   width="100%"
                   alignItems="flex-start"
                 >
-                  <Heading
-                    as="h4"
-                    fontWeight="medium"
-                    color="brandColor"
-                    fontSize="32px"
-                  >
-                    {frontmatter.name}
-                  </Heading>
+                  <Link to={`/${frontmatter.slug}`}>
+                    <Heading
+                      as="h4"
+                      fontWeight="medium"
+                      color="brandColor"
+                      fontSize="32px"
+                    >
+                      {frontmatter.title}
+                    </Heading>
+                  </Link>
                   <HStack>
                     <HStack>
                       <Icon as={BsPeople} w="20px" h="20px" />
-                      <Text>{frontmatter.guests}</Text>
+                      <Text>{frontmatter.numOfPeople}</Text>
                     </HStack>
                     <HStack>
                       <Icon as={IoCarSportOutline} w="20px" h="20px" />
                       <Text>{frontmatter.feature}</Text>
                     </HStack>
                   </HStack>
-                  <Text>{excerpt}</Text>
+                  <Text>{frontmatter.description}</Text>
                   <OutlineLink href={`/`}>Read more</OutlineLink>
                 </VStack>
               </VStack>
