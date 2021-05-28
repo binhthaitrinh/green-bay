@@ -37,7 +37,7 @@ export default function Footer() {
         // py="24px"
         borderBottom="1px solid var(--chakra-colors-gray-200)"
       >
-        <Box width="450px">
+        <Box width={["300px", "300px", "450px"]}>
           <Link to="/">
             <StaticImage
               src="../images/logo-horizontal.png"
@@ -51,7 +51,11 @@ export default function Footer() {
       </VStack>
       <Box py="40px">
         <Container>
-          <Stack flexDirection="row" justifyContent="space-between">
+          <Stack
+            direction={["column-reverse", "column-reverse", "row"]}
+            justifyContent="space-between"
+            spacing={8}
+          >
             <Box>
               <VStack alignItems="flex-start" spacing={4}>
                 <Heading
@@ -65,10 +69,14 @@ export default function Footer() {
                 <HStack>
                   <Icon as={AiFillPhone} color="gray.500" w={6} h={6} />
                   <Text>
-                    {
-                      data.allMarkdownRemark.edges[0].node.frontmatter
-                        .phoneNumber
-                    }
+                    <ExternalLink
+                      href={`tel:${data.allMarkdownRemark.edges[0].node.frontmatter.phoneNumber}`}
+                    >
+                      {
+                        data.allMarkdownRemark.edges[0].node.frontmatter
+                          .phoneNumber
+                      }
+                    </ExternalLink>
                   </Text>
                 </HStack>
                 <HStack>
@@ -91,7 +99,7 @@ export default function Footer() {
               <HStack spacing={8} textDecor="underline" my={8}>
                 <ChakraLink
                   as={Link}
-                  to="/policy-notice"
+                  to="/privacy-notice"
                   _hover={{ color: "brandColor" }}
                 >
                   Privacy Policy
@@ -130,7 +138,14 @@ export default function Footer() {
               <HStack>
                 <Icon as={AiFillPhone} color="gray.500" w={6} h={6} />
                 <Text>
-                  {data.allMarkdownRemark.edges[1].node.frontmatter.phoneNumber}
+                  <ExternalLink
+                    href={`tel:${data.allMarkdownRemark.edges[1].node.frontmatter.phoneNumber}`}
+                  >
+                    {
+                      data.allMarkdownRemark.edges[1].node.frontmatter
+                        .phoneNumber
+                    }
+                  </ExternalLink>
                 </Text>
               </HStack>
 
@@ -151,11 +166,11 @@ export default function Footer() {
                 />
                 <IconWithLink
                   IconComp={FaFacebook}
-                  href="https://www.instagram.com/greenbayphuquocresort/"
+                  href="https://www.facebook.com/greenbayphuquoc"
                 />
                 <IconWithLink
                   IconComp={FaYoutube}
-                  href="https://www.instagram.com/greenbayphuquocresort/"
+                  href="https://www.youtube.com/channel/UCziHTBwGje08vZZw3iRkJmQ"
                 />
               </HStack>
             </VStack>

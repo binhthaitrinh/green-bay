@@ -70,7 +70,7 @@ export default function Offers() {
         >
           <SwiperSlide>
             <Grid
-              gridTemplateColumns="repeat(auto-fill, minmax(400px, 1fr))"
+              gridTemplateColumns={["1fr", "1fr", "1fr", "repeat(2, 1fr)"]}
               // gridTemplateRows="1fr"
               w={["", "", "90%"]}
               margin="auto"
@@ -99,7 +99,7 @@ export default function Offers() {
                   }}
                 />
               </Box>
-              <Box p="40px 60px">
+              <Box p={["30px 16px", "40px 60px"]}>
                 <Heading as="h3" color="brandColor" mb="32px" fontSize="40px">
                   Honeymoon package:
                   <br /> 2 nights stay
@@ -121,7 +121,7 @@ export default function Offers() {
           </SwiperSlide>
           <SwiperSlide>
             <Grid
-              gridTemplateColumns="repeat(auto-fill, minmax(400px, 1fr))"
+              gridTemplateColumns={["1fr", "1fr", "1fr", "repeat(2, 1fr)"]}
               w={["", "", "90%"]}
               margin="auto"
               border="1px solid var(--chakra-colors-gray-200)"
@@ -149,11 +149,15 @@ export default function Offers() {
                   }}
                 />
               </Box>
-              <VStack alignItems="flex-start" justify="center" p="40px 60px">
+              <VStack
+                alignItems="flex-start"
+                justify="center"
+                p={["30px 16px", "40px 60px"]}
+              >
                 <Heading as="h3" color="brandColor" fontSize="40px">
                   Special Promotion
                 </Heading>
-                <Text color="gray.400" mb="32px">
+                <Text color="gray.500" mb="32px">
                   Discount 10% for all direct booking
                 </Text>
                 <List spacing={3}>

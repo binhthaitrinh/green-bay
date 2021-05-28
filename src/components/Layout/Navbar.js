@@ -49,8 +49,8 @@ export default function Navbar() {
         <Box
           zIndex={999997}
           position="fixed"
-          right={12}
-          top={16}
+          right={[8, 8, 12]}
+          top={[12, 12, 16]}
           bg="white"
           borderRadius="50%"
           w={16}
@@ -63,8 +63,8 @@ export default function Navbar() {
         <Button
           position="fixed"
           zIndex={999999}
-          right={12}
-          top={16}
+          right={[8, 8, 12]}
+          top={[12, 12, 16]}
           bg="white"
           variant="unstyled"
           borderRadius="50%"

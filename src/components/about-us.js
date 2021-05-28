@@ -8,10 +8,10 @@ export default function AboutUs() {
   return (
     <Section>
       <Grid
-        gridTemplateColumns="repeat(auto-fill, minmax(500px, 1fr))"
-        gridGap="100px"
+        gridTemplateColumns={["1fr", "1fr", "1fr", "repeat(2,1fr)"]}
+        gridGap={["50px", "50px", "50px", "100px"]}
       >
-        <Box p="100px 15px">
+        <Box p={[0, 0, 0, "100px 15px"]}>
           <VStack alignItems="flex-start" color="gray.500">
             <Heading as="h3" color="gray.500" fontSize="24px">
               About us

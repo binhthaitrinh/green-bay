@@ -9,6 +9,7 @@ import { BsPeople } from "react-icons/bs"
 import { IoCarSportOutline } from "react-icons/io5"
 import Icon from "@chakra-ui/icon"
 import { OutlineLink } from "./Buttons"
+import { OutlineGatsbyLink } from "./Link"
 
 export default function Favorites() {
   const data = useStaticQuery(graphql`
@@ -49,33 +50,37 @@ export default function Favorites() {
           return (
             <Stack
               key={frontmatter.slug}
-              flexDirection="row"
+              flexDirection={["column", "column", "column", "row"]}
+              spacing={0}
               flexWrap="wrap"
               width="100%"
             >
-              <Box flexBasis="40%">
-                <Link to={`/${frontmatter.slug}`}>
+              <Box
+                flexBasis="40%"
+                height={["300px", "300px", "300px", "600px"]}
+              >
+                <Link to={`/accomodations/${frontmatter.slug}`}>
                   <GatsbyImage
                     image={getImage(frontmatter.cover)}
                     alt={frontmatter.title}
-                    style={{ width: "100%", height: "600px" }}
+                    style={{ width: "100%", height: "100%" }}
                     // aspectRatio={16 / 12}
                   />
                 </Link>
               </Box>
               <VStack
                 flexBasis="60%"
-                order={index % 2 === 1 ? -1 : 1}
+                order={[1, 1, 1, index % 2 === 1 ? -1 : 1]}
                 justifyContent="center"
                 alignItems="flex-start"
               >
                 <VStack
-                  padding="80px 60px"
+                  padding={["30px 15px", "30px 15px", "80px 60px"]}
                   border="1px solid var(--chakra-colors-gray-200)"
                   width="100%"
                   alignItems="flex-start"
                 >
-                  <Link to={`/${frontmatter.slug}`}>
+                  <Link to={`/accomodations/${frontmatter.slug}`}>
                     <Heading
                       as="h4"
                       fontWeight="medium"
@@ -96,7 +101,9 @@ export default function Favorites() {
                     </HStack>
                   </HStack>
                   <Text>{frontmatter.description}</Text>
-                  <OutlineLink href={`/`}>Read more</OutlineLink>
+                  <OutlineGatsbyLink to={`/accomodations/${frontmatter.slug}`}>
+                    Read more
+                  </OutlineGatsbyLink>
                 </VStack>
               </VStack>
             </Stack>

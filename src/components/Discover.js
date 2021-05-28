@@ -36,7 +36,7 @@ export default function Discover() {
     <Section>
       <SectionHeader>Discover</SectionHeader>
       <Grid
-        gridTemplateColumns="repeat(auto-fill, minmax(350px, 1fr))"
+        gridTemplateColumns="repeat(auto-fill, minmax(280px, 1fr))"
         gridAutoRows="400px auto auto"
         gap="40px"
       >
@@ -49,7 +49,7 @@ export default function Discover() {
               key={frontmatter.title}
               gridTemplateRows="400px auto auto"
               gridRow="span 3 / auto"
-              padding="30px"
+              padding={["15px", "30px"]}
               border="1px solid var(--chakra-colors-gray-200)"
             >
               <Link to={`/${frontmatter.slug}`} style={{ display: "inherit" }}>

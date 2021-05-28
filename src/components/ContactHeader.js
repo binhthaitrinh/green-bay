@@ -34,11 +34,11 @@ export default function ContactHeader() {
               />
               <IconWithLink
                 IconComp={FaFacebook}
-                href="https://www.instagram.com/greenbayphuquocresort/"
+                href="https://www.facebook.com/greenbayphuquoc"
               />
               <IconWithLink
                 IconComp={FaYoutube}
-                href="https://www.instagram.com/greenbayphuquocresort/"
+                href="https://www.youtube.com/channel/UCziHTBwGje08vZZw3iRkJmQ"
               />
             </HStack>
           </HStack>
