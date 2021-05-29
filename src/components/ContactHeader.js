@@ -21,7 +21,11 @@ export default function ContactHeader() {
             spacing="24px"
             justifyContent="flex-start"
           >
-            <Text textTransform="capitalize">Welcome to green by phu quoc</Text>
+            <Link to="/">
+              <Text textTransform="capitalize">
+                Welcome to green by phu quoc
+              </Text>
+            </Link>
             <HStack
               justifyContent="flex-start"
               alignItems="center"

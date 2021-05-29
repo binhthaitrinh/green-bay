@@ -108,7 +108,7 @@ export default function Bungalow({ data }) {
                       width={["100%", "90%"]}
                       m="auto"
                       mb={10}
-                      h={["200px", "500px"]}
+                      h={["200px", "300px", "300px", "700px"]}
                     >
                       <GatsbyImage
                         image={edge.node.gatsbyImageData}
@@ -304,25 +304,19 @@ export const query = graphql`
         features
       }
     }
-    allImageSharp(
-      filter: { fluid: { originalName: { regex: $regex } } }
-      limit: 3
-    ) {
+    allImageSharp(filter: { fluid: { originalName: { regex: $regex } } }) {
       edges {
         node {
-          gatsbyImageData(
-            quality: 100
-            placeholder: BLURRED
-            layout: FULL_WIDTH
-          )
+          gatsbyImageData(quality: 60, placeholder: BLURRED, layout: FULL_WIDTH)
         }
       }
     }
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/accomodations/" }
-        frontmatter: { slug: { ne: $slug } }
+        frontmatter: { slug: { ne: $slug }, role: { ne: "overview" } }
       }
+      limit: 3
     ) {
       edges {
         node {
