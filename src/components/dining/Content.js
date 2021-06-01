@@ -1,7 +1,7 @@
 import { Box, Grid, Heading, Text, VStack } from "@chakra-ui/layout"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import React from "react"
 import Section from "../Section"
@@ -70,7 +70,6 @@ export default function Content() {
         {data.allMarkdownRemark.edges.map(edge => {
           const image = getImage(edge.node.frontmatter.cover)
           const bgImage = convertToBgImage(image)
-          console.log(bgImage)
           return (
             <Box key={edge.node.frontmatter.title} width="100%">
               <BackgroundImage

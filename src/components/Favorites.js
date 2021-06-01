@@ -1,5 +1,4 @@
 import { Box, Heading, HStack, Stack, Text, VStack } from "@chakra-ui/layout"
-import { FramerTreeLayoutContext } from "framer-motion"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
@@ -8,7 +7,6 @@ import { SectionHeader } from "./sectionTypos"
 import { BsPeople } from "react-icons/bs"
 import { IoCarSportOutline } from "react-icons/io5"
 import Icon from "@chakra-ui/icon"
-import { OutlineLink } from "./Buttons"
 import { OutlineGatsbyLink } from "./Link"
 
 export default function Favorites() {
@@ -19,6 +17,7 @@ export default function Favorites() {
           fileAbsolutePath: { regex: "/accomodations/" }
           frontmatter: { role: { ne: "overview" } }
         }
+        limit: 3
       ) {
         edges {
           node {

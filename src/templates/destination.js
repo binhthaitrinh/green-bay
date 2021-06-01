@@ -1,6 +1,6 @@
 import { Box, Heading, Text, VStack } from "@chakra-ui/layout"
 import { Icon } from "@chakra-ui/react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { getImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
@@ -12,13 +12,17 @@ import Seo from "../components/seo"
 import { Container } from "../components/Layout"
 
 export default function Discover({ data }) {
-  console.log(data)
   const image = getImage(data.markdownRemark.frontmatter.cover)
-  console.log(image)
   const bgImage = convertToBgImage(image)
   return (
     <Layout>
-      <Seo title={data.markdownRemark.frontmatter.title} />
+      <Seo
+        title={data.markdownRemark.frontmatter.title}
+        description={data.markdownRemark.frontmatter.description
+          .split("\\n")
+          .join("")
+          .slice(0, 155)}
+      />
       <header>
         <Navbar />
         <VStack

@@ -1,11 +1,4 @@
-import {
-  Box,
-  HStack,
-  ListItem,
-  Stack,
-  UnorderedList,
-  VStack,
-} from "@chakra-ui/layout"
+import { Box, ListItem, Stack, UnorderedList, VStack } from "@chakra-ui/layout"
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { Container } from "./index"

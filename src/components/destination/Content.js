@@ -2,7 +2,6 @@ import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/layout"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
-import { Container } from "../Layout"
 import Section from "../Section"
 import { HiOutlineArrowNarrowRight } from "react-icons/hi"
 import { OutlineGatsbyLink } from "../Link"
@@ -43,7 +42,6 @@ export default function Content() {
           return (
             <Stack
               key={frontmatter.slug}
-              key={index}
               flexDirection={["column", "column", "column", "row"]}
               flexWrap="wrap"
               spacing={0}

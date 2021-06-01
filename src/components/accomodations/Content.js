@@ -1,13 +1,5 @@
 import Icon from "@chakra-ui/icon"
-import {
-  Box,
-  Grid,
-  Heading,
-  HStack,
-  Stack,
-  Text,
-  VStack,
-} from "@chakra-ui/layout"
+import { Box, Heading, HStack, Stack, Text, VStack } from "@chakra-ui/layout"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import React from "react"

@@ -9,7 +9,6 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  HStack,
   Text,
   Input,
   VStack,
@@ -19,8 +18,7 @@ import {
   Stack,
 } from "@chakra-ui/react"
 import { Container } from "./Layout"
-import { OutlineLink, PrimaryLink } from "./Buttons"
-import { CgArrowLongRight } from "react-icons/cg"
+import { PrimaryLink } from "./Buttons"
 import Navbar from "./Layout/Navbar"
 
 function padding(input) {
@@ -55,7 +53,6 @@ export default function Header() {
   `)
   const image = getImage(data.markdownRemark.frontmatter.cover)
   const bgImage = convertToBgImage(image)
-  console.log(bgImage)
   const { title, description } = data.markdownRemark.frontmatter
   return (
     <BackgroundImage

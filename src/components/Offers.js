@@ -2,13 +2,7 @@ import React from "react"
 import Section from "./Section"
 import { SectionHeader } from "./sectionTypos"
 import { Swiper, SwiperSlide } from "swiper/react"
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay,
-} from "swiper"
+import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from "swiper"
 
 import "swiper/swiper-bundle.css"
 import {
@@ -16,7 +10,6 @@ import {
   Divider,
   Grid,
   Heading,
-  HStack,
   List,
   ListIcon,
   ListItem,
@@ -63,8 +56,8 @@ export default function Offers() {
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          onSwiper={swiper => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
+          // onSwiper={swiper => console.log(swiper)}
+          // onSlideChange={() => console.log("slide change")}
           autoplay={{ delay: 5000 }}
           loop
         >

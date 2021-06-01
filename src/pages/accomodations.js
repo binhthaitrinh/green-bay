@@ -8,7 +8,7 @@ import Content from "../components/accomodations/Content"
 export default function Experiences() {
   return (
     <Layout>
-      <Seo title="Sustainable Hospitality"></Seo>
+      <Seo title="Accomodations"></Seo>
       <header>
         <Navbar />
         <Header />

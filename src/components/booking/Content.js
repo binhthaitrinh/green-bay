@@ -11,7 +11,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/layout"
-import { Textarea } from "@chakra-ui/textarea"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import { AiFillPhone } from "react-icons/ai"

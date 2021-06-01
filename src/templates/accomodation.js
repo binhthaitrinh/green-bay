@@ -7,12 +7,11 @@ import {
   Heading,
   HStack,
   Stack,
-  StackDivider,
   Text,
   VStack,
 } from "@chakra-ui/layout"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 import Section from "../components/Section"
 import { SectionHeader } from "../components/sectionTypos"
@@ -45,15 +44,13 @@ export default function Bungalow({ data }) {
   const {
     title,
     description,
-    slug,
     feature,
     numOfPeople,
-    image,
     features,
   } = data.markdownRemark.frontmatter
   return (
     <Layout>
-      <Seo title={title} />
+      <Seo title={title} description={description} />
       <header>
         <Navbar />
       </header>
@@ -96,8 +93,8 @@ export default function Bungalow({ data }) {
               slidesPerView={1}
               navigation
               pagination={{ clickable: true }}
-              onSwiper={swiper => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
+              // onSwiper={swiper => console.log(swiper)}
+              // onSlideChange={() => console.log("slide change")}
               autoplay={{ delay: 5000 }}
               loop
             >
