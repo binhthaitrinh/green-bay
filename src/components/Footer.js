@@ -15,7 +15,7 @@ export default function Footer() {
     query {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/contact/" } }
-        sort: { fields: id, order: ASC }
+        sort: { fields: frontmatter___id, order: ASC }
       ) {
         edges {
           node {
