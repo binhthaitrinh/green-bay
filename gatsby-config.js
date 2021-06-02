@@ -42,12 +42,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Greenbay Phu Quoc Resort`,
+        short_name: `greenbay`,
         start_url: `/`,
         background_color: `#367639`,
         theme_color: `#367639`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/logo-gray.png`, // This path is relative to the root of the site.
       },
     },

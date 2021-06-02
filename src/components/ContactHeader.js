@@ -35,14 +35,17 @@ export default function ContactHeader() {
               <IconWithLink
                 IconComp={FaInstagram}
                 href="https://www.instagram.com/greenbayphuquocresort/"
+                ariaLabel="Instagram page"
               />
               <IconWithLink
                 IconComp={FaFacebook}
                 href="https://www.facebook.com/greenbayphuquoc"
+                ariaLabel="Facebook page"
               />
               <IconWithLink
                 IconComp={FaYoutube}
                 href="https://www.youtube.com/channel/UCziHTBwGje08vZZw3iRkJmQ"
+                ariaLabel="Youtube page"
               />
             </HStack>
           </HStack>
@@ -54,6 +57,7 @@ export default function ContactHeader() {
             <ExternalLink
               href="tel:+842976267799"
               display={["none", "inline-block"]}
+              aria-label="Phone number"
             >
               <HStack justifyContent="flex-end" alignItems="center">
                 <Icon as={AiTwotonePhone} w={6} h={6} />
@@ -65,6 +69,7 @@ export default function ContactHeader() {
             <ExternalLink
               href="mailto:info@greenbayphuquocresort.com"
               display={["none", "inline-block"]}
+              aria-label="mail to us"
             >
               <HStack justifyContent="flex-end" alignItems="center">
                 <Icon as={IoMdMail} w={6} h={6} />
@@ -89,9 +94,9 @@ export default function ContactHeader() {
   )
 }
 
-function IconWithLink({ IconComp, href, ...props }) {
+function IconWithLink({ IconComp, href, ariaLabel, ...props }) {
   return (
-    <ExternalLink href={href}>
+    <ExternalLink href={href} aria-label={ariaLabel || ""}>
       <Icon as={IconComp} w={6} h={6} {...props} />
     </ExternalLink>
   )

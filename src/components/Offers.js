@@ -1,4 +1,4 @@
-import React from "react"
+import React, { lazy } from "react"
 import Section from "./Section"
 import { SectionHeader } from "./sectionTypos"
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -80,7 +80,7 @@ export default function Offers() {
                 ]}
               >
                 <StaticImage
-                  quality="100%"
+                  quality="60%"
                   src="../images/offer1.jpg"
                   layout="fullWidth"
                   alt="offer 1"
@@ -132,7 +132,7 @@ export default function Offers() {
                   src="../images/offer2.jpg"
                   layout="fullWidth"
                   alt="offer 2"
-                  quality="100%"
+                  quality="60%"
                   style={{
                     height: "100%",
                     // clipPath: "polygon(0 0, 100% 0, 90% 100%, 0 100%",

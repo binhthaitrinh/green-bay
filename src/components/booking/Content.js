@@ -53,7 +53,7 @@ export default function Content() {
       </Heading>
       <Stack
         direction={["column", "row"]}
-        spacing={[8, undefined]}
+        spacing={[8, 0]}
         border="1px solid var(--chakra-colors-gray-300)"
         px={[4, 8]}
         py={8}

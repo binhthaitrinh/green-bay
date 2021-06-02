@@ -163,14 +163,17 @@ export default function Footer() {
                 <IconWithLink
                   IconComp={FaInstagram}
                   href="https://www.instagram.com/greenbayphuquocresort/"
+                  ariaLabel="Instagram page"
                 />
                 <IconWithLink
                   IconComp={FaFacebook}
                   href="https://www.facebook.com/greenbayphuquoc"
+                  ariaLabel="Facebook page"
                 />
                 <IconWithLink
                   IconComp={FaYoutube}
                   href="https://www.youtube.com/channel/UCziHTBwGje08vZZw3iRkJmQ"
+                  ariaLabel="Youtube page"
                 />
               </HStack>
             </VStack>

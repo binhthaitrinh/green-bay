@@ -44,7 +44,7 @@ export default function Header() {
           description
           cover {
             childImageSharp {
-              gatsbyImageData(quality: 100, placeholder: BLURRED)
+              gatsbyImageData(quality: 60, placeholder: BLURRED)
             }
           }
         }

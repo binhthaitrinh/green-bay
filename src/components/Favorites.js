@@ -29,7 +29,7 @@ export default function Favorites() {
               description
               cover {
                 childImageSharp {
-                  gatsbyImageData(quality: 100, placeholder: BLURRED)
+                  gatsbyImageData(quality: 30, placeholder: BLURRED)
                 }
               }
             }
@@ -101,7 +101,7 @@ export default function Favorites() {
                   </HStack>
                   <Text>{frontmatter.description}</Text>
                   <OutlineGatsbyLink to={`/accomodations/${frontmatter.slug}`}>
-                    Read more
+                    Check out room details
                   </OutlineGatsbyLink>
                 </VStack>
               </VStack>

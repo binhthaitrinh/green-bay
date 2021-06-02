@@ -54,6 +54,7 @@ export default function AboutUs() {
             src="../images/about-us.jpg"
             style={{ height: "100%" }}
             alt="greenbay"
+            quality="60%"
           />
         </Box>
       </Grid>

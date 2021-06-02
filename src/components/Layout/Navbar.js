@@ -66,6 +66,7 @@ export default function Navbar() {
           onClick={() => setShowMenu(show => !show)}
           display={["inline", "inline", "inline", "none"]}
           border="1px solid var(--chakra-colors-gray-200)"
+          aria-label="menu toggle"
         >
           <VStack spacing={1}>
             <Box height="4px" width={8} backgroundColor="gray.600" />
