@@ -1,6 +1,6 @@
 # Greenbay Phu Quoc Resort & Spa
 
-A highly perfomant, modern website that I built as a freelancer for Greenbay Phu Quoc Resort & Spa.
+A highly performant, modern website that I built as a freelancer for Greenbay Phu Quoc Resort & Spa.
 
 ## Project Screen Shot(s)
 
