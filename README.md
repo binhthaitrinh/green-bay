@@ -10,8 +10,6 @@ A highly performant, modern website that I built as a freelancer for Greenbay Ph
 
 ## Installation and Setup Instructions
 
-#### Example:
-
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
 Installation:
@@ -25,6 +23,14 @@ To Start the Application in development mode:
 To Visit App:
 
 `localhost:8000`
+
+## Technologies:
+
+- Gatsby
+- Gatsby Image
+- Netlify
+- Chakra UI
+- GraphQL
 
 ## Reflection
 
